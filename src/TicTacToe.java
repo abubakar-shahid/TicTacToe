@@ -153,6 +153,20 @@ public class TicTacToe {
             return 2;
     }
 
+    private static void clearScreen() {
+        try {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        } catch (Exception e) {
+            System.out.println("An error occurred while trying to clear the screen.");
+        }
+    }
+
     public static void main(String[] args) {
         final int r = 3, c = 3;
         int input1 = 0, input2 = 0;
