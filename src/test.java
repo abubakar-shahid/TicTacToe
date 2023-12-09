@@ -10,4 +10,11 @@ class TicTacToeTest {
         assertEquals('X', ttt[0][0]);
     }
 
+    @Test
+    void testPlayer2() {
+        char[][] ttt = new char[][]{{'*', '*', '*'}, {'*', '*', '*'}, {'*', '*', '*'}};
+        TicTacToe.player2(ttt, 3, 5);
+        assertEquals('O', ttt[1][1]);
+    }
+
 }
