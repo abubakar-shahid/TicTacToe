@@ -176,6 +176,92 @@ public class TicTacToe {
                 ttt[i][j] = '*';
             }
         }
+
+        for (int turn = 0; turn < 10; turn++) {
+            clearScreen();
+            System.out.println("\n****************************** Welcome to FAST Tic-Tac-Toe ******************************\n");
+            System.out.println("\n'X' is for Player.1 and 'O' is for Player.2\n");
+            System.out.println("Enter box number for your turn (Starting from left ---> 1 to 9).\n");
+            output(ttt, r);
+
+            int win1 = ending1Check(ttt, r);
+            if (win1 == 0) {
+                System.out.println("\n************************************* Player 2 wins *************************************\n");
+                break;
+            } else if (win1 == 1) {
+                System.out.println("\n*************************************** Game Draw ***************************************\n");
+                break;
+            }
+
+            System.out.print("\nPlayer 1 turn: ");
+            boolean check1 = true;
+            Scanner scanner = new Scanner(System.in);
+            while (check1) {
+                input1 = scanner.nextInt();
+                if (input1 < 1 || input1 > 9) {
+                    System.out.println("\nPlease enter appropriate box number!!!\n");
+                } else {
+                    check1 = false;
+                    break;
+                }
+            }
+
+            boolean check3 = true;
+            while (check3) {
+                int x = 0;
+                x = check1(ttt, r, input1, x);
+                if (x == 0) {
+                    check3 = false;
+                    break;
+                } else {
+                    System.out.println("\nThis box is already occupied!!!\n");
+                    input1 = scanner.nextInt();
+                }
+            }
+
+            player1(ttt, r, input1);
+            clearScreen();
+            System.out.println("\n****************************** Welcome to FAST Tic-Tac-Toe ******************************\n");
+            System.out.println("\n'X' is for Player.1 and 'O' is for Player.2\n");
+            System.out.println("Enter box number for your turn (Starting from left ---> 1 to 9).\n");
+            output(ttt, r);
+
+            int win2 = ending2Check(ttt, r);
+            if (win2 == 0) {
+                System.out.println("\n************************************* Player 1 wins *************************************\n");
+                break;
+            } else if (win2 == 1) {
+                System.out.println("\n*************************************** Game Draw ***************************************\n");
+                break;
+            }
+
+            System.out.print("\nPlayer 2 turn: ");
+            boolean check2 = true;
+            while (check2) {
+                input2 = scanner.nextInt();
+                if (input2 < 1 || input2 > 9) {
+                    System.out.println("\nPlease enter appropriate box number!!!\n");
+                } else {
+                    check2 = false;
+                    break;
+                }
+            }
+
+            boolean check4 = true;
+            while (check4) {
+                int x = 0;
+                x = check2(ttt, r, input2, x);
+                if (x == 0) {
+                    check4 = false;
+                    break;
+                } else {
+                    System.out.println("\nThis box is already occupied!!!\n");
+                    input2 = scanner.nextInt();
+                }
+            }
+
+            player2(ttt, r, input2);
+        }
     }
 
 }
