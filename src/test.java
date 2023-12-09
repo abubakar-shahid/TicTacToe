@@ -45,4 +45,11 @@ class TicTacToeTest {
         assertEquals(1, result);
     }
 
+    @Test
+    void testEnding1CheckContinueGame() {
+        char[][] ttt = new char[][]{{'X', 'O', '*'}, {'O', '*', 'O'}, {'*', 'X', 'X'}};
+        int result = TicTacToe.ending1Check(ttt, 3);
+        assertEquals(2, result);
+    }
+
 }
