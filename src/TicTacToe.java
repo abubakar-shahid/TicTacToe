@@ -75,6 +75,52 @@ public class TicTacToe {
         }
     }
 
+    static int check1(char[][] ttt, int row, int input1, int x) {
+        if (input1 == 1) {
+            return (ttt[0][0] != '*') ? 1 : 0;
+        } else if (input1 == 2) {
+            return (ttt[0][1] != '*') ? 1 : 0;
+        } else if (input1 == 3) {
+            return (ttt[0][2] != '*') ? 1 : 0;
+        } else if (input1 == 4) {
+            return (ttt[1][0] != '*') ? 1 : 0;
+        } else if (input1 == 5) {
+            return (ttt[1][1] != '*') ? 1 : 0;
+        } else if (input1 == 6) {
+            return (ttt[1][2] != '*') ? 1 : 0;
+        } else if (input1 == 7) {
+            return (ttt[2][0] != '*') ? 1 : 0;
+        } else if (input1 == 8) {
+            return (ttt[2][1] != '*') ? 1 : 0;
+        } else if (input1 == 9) {
+            return (ttt[2][2] != '*') ? 1 : 0;
+        }
+        return 0;
+    }
+
+    static int check2(char[][] ttt, int row, int input2, int x) {
+        if (input2 == 1) {
+            return (ttt[0][0] != '*') ? 1 : 0;
+        } else if (input2 == 2) {
+            return (ttt[0][1] != '*') ? 1 : 0;
+        } else if (input2 == 3) {
+            return (ttt[0][2] != '*') ? 1 : 0;
+        } else if (input2 == 4) {
+            return (ttt[1][0] != '*') ? 1 : 0;
+        } else if (input2 == 5) {
+            return (ttt[1][1] != '*') ? 1 : 0;
+        } else if (input2 == 6) {
+            return (ttt[1][2] != '*') ? 1 : 0;
+        } else if (input2 == 7) {
+            return (ttt[2][0] != '*') ? 1 : 0;
+        } else if (input2 == 8) {
+            return (ttt[2][1] != '*') ? 1 : 0;
+        } else if (input2 == 9) {
+            return (ttt[2][2] != '*') ? 1 : 0;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         final int r = 3, c = 3;
         int input1 = 0, input2 = 0;
