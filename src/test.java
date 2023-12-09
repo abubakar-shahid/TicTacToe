@@ -25,6 +25,13 @@ class TicTacToeTest {
     }
 
     @Test
+    void testCheck2Occupied() {
+        char[][] ttt = new char[][]{{'X', '*', '*'}, {'*', '*', '*'}, {'*', '*', '*'}};
+        int result = TicTacToe.check2(ttt, 3, 1, 0);
+        assertEquals(1, result);
+    }
+
+    @Test
     void testCheck1NotOccupied() {
         char[][] ttt = new char[][]{{'*', '*', '*'}, {'*', '*', '*'}, {'*', '*', '*'}};
         int result = TicTacToe.check1(ttt, 3, 1, 0);
