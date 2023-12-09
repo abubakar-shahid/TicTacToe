@@ -121,6 +121,22 @@ public class TicTacToe {
         return 0;
     }
 
+    static int ending1Check(char[][] ttt, int row) {
+        if ((ttt[0][0] == ttt[0][1] && ttt[0][1] == ttt[0][2] && ttt[0][0] != '*' && ttt[0][1] != '*' && ttt[0][2] != '*') ||
+                (ttt[0][0] == ttt[1][1] && ttt[1][1] == ttt[2][2] && ttt[0][0] != '*' && ttt[1][1] != '*' && ttt[2][2] != '*') ||
+                (ttt[0][0] == ttt[1][0] && ttt[1][0] == ttt[2][0] && ttt[0][0] != '*' && ttt[1][0] != '*' && ttt[2][0] != '*') ||
+                (ttt[0][2] == ttt[1][2] && ttt[1][2] == ttt[2][2] && ttt[0][2] != '*' && ttt[1][2] != '*' && ttt[2][2] != '*') ||
+                (ttt[2][0] == ttt[2][1] && ttt[2][1] == ttt[2][2] && ttt[2][0] != '*' && ttt[2][1] != '*' && ttt[2][2] != '*') ||
+                (ttt[0][2] == ttt[1][1] && ttt[1][1] == ttt[2][0] && ttt[0][2] != '*' && ttt[1][1] != '*' && ttt[2][0] != '*') ||
+                (ttt[0][1] == ttt[1][1] && ttt[1][1] == ttt[2][1] && ttt[0][1] != '*' && ttt[1][1] != '*' && ttt[2][1] != '*') ||
+                (ttt[1][0] == ttt[1][1] && ttt[1][1] == ttt[1][2] && ttt[1][0] != '*' && ttt[1][1] != '*' && ttt[1][2] != '*'))
+            return 0;
+        else if (ttt[0][0] != '*' && ttt[0][1] != '*' && ttt[0][2] != '*' && ttt[1][0] != '*' && ttt[1][1] != '*' && ttt[1][2] != '*' && ttt[2][0] != '*' && ttt[2][1] != '*' && ttt[2][2] != '*')
+            return 1;
+        else
+            return 2;
+    }
+
     public static void main(String[] args) {
         final int r = 3, c = 3;
         int input1 = 0, input2 = 0;
